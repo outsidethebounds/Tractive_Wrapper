@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tractive Inspector</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>Tractive Inspector</h1>
+      <div id="status">Loading…</div>
+      <h2>Trackers</h2>
+      <ul id="tracker-list"></ul>
+      <h2>Pets</h2>
+      <ul id="pet-list"></ul>
+    </aside>
+    <main class="main">
+      <section class="panel control-bar">
+        <div class="controls-left">
+          <button data-action="request_position">Request Position</button>
+          <button data-action="live_on">Start Live Tracking</button>
+          <button data-action="live_off">Stop Live Tracking</button>
+          <button data-action="light">Light</button>
+          <button data-action="sound">Sound</button>
+        </div>
+        <div id="control-status"></div>
+      </section>
+
+      <section class="panel map-panel primary">
+        <div class="panel-header">
+          <h2>Live Map</h2>
+          <div id="tracker-chip"></div>
+        </div>
+        <div id="map"></div>
+      </section>
+
+      <section class="panel lower-grid">
+        <div class="subpanel">
+          <div class="panel-header">
+            <h2>Tracker</h2>
+            <button id="details-tab" class="linkish">Open details</button>
+          </div>
+          <div id="tracker-overview"></div>
+        </div>
+
+        <div class="subpanel">
+          <div class="panel-header">
+            <h2>Live Events</h2>
+          </div>
+          <pre id="events"></pre>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="details-dialog">
+    <div class="dialog-header">
+      <h2 id="tracker-title">Tracker details</h2>
+      <button id="close-details">Close</button>
+    </div>
+    <pre id="tracker-summary"></pre>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

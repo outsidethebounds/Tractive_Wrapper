@@ -1,0 +1,12 @@
+{
+  "name": "tractive-wrapper-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/client",
+    "packages/test-app"
+  ],
+  "scripts": {
+    "build": "npm run -w @tractive/client build && npm run -w @tractive/test-app build",
+    "dev": "npm run -w @tractive/test-app dev"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+packages/*/dist/
+**/.env
+**/.imported-session.json
+**/.tractive-session.json
+.DS_Store
+*.log
